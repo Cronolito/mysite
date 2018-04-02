@@ -14,8 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
+#Path har argumenten URLtillagg, och sen en route att visa. I detta fall har vi hanvisat till en annan fil i polls.urls med inclutefunktionen.
 urlpatterns = [
+    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
